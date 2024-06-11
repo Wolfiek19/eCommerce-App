@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.Library", "Amz.Library\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.cons", "Amz.cons\Amz.cons.csproj", "{325B968A-8804-4B99-9844-ECAEBFA6AF3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amz.MAUI", "Amz.MAUI\Amz.MAUI.csproj", "{B044C31C-268F-463B-8A9E-9EDDE1053B44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{325B968A-8804-4B99-9844-ECAEBFA6AF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{325B968A-8804-4B99-9844-ECAEBFA6AF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{325B968A-8804-4B99-9844-ECAEBFA6AF3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B044C31C-268F-463B-8A9E-9EDDE1053B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B044C31C-268F-463B-8A9E-9EDDE1053B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B044C31C-268F-463B-8A9E-9EDDE1053B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B044C31C-268F-463B-8A9E-9EDDE1053B44}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
