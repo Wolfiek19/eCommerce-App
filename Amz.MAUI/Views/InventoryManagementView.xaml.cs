@@ -5,6 +5,7 @@ public partial class InventoryManagementView : ContentPage
 	public InventoryManagementView()
 	{
 		InitializeComponent();
+		BindingContext = new InventoryViewModel();
 	}
 	
 	private void BackClicked(object sender, EventArgs e){

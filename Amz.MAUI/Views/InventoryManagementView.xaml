@@ -4,16 +4,13 @@
              x:Class="Amz.MAUI.Views.InventoryManagementView"
              Title="InventoryManagementView">
     <VerticalStackLayout>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="90*"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
+        <ListView
+            ItemsSource="{Binding Items}"
+        />
             <Button Grid.Row="1"
                 Text="Go Back"
                 Clicked="BackClicked"
             />
-
-        </Grid>
+        
     </VerticalStackLayout>
 </ContentPage>
