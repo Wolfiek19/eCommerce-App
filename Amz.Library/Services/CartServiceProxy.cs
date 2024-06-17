@@ -79,18 +79,22 @@ public class CartServiceProxy
             return;
         }
 
-        double subTotal = 0;
+        decimal subTotal = 0;
 
         Console.WriteLine("Receipt: ");
         Console.WriteLine("-----------------------------");
 
         foreach(var cartItem in cartItems){
-            double itemTotal = cartItem.Quantity * cartItem.Price;
+            if(cartItem == null){
+                continue;
+            }
+            var itemTotal = cartItem.Quantity * cartItem.Price;
+            //decimal itemTotal = 0;
             subTotal += itemTotal;
             Console.WriteLine($"{cartItem.Quantity} @ {cartItem.Price} \t {cartItem.Name} \t {itemTotal:C}");
         }
-        double tax = subTotal * 0.07;
-        double total = subTotal + tax;
+        decimal tax = subTotal * 0.07m;
+        decimal total = subTotal + tax;
 
         Console.WriteLine("-------------------------");
         Console.WriteLine($"Subtotal: \t\t\t {subTotal:C}");

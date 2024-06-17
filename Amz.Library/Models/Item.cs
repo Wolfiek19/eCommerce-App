@@ -14,10 +14,10 @@ public class Item
         get{ return description; }
         set{ description = value; }
     }
-    private double price;
-    public double Price{
+    private decimal price;
+    public decimal Price{
         get{return price;}
-        set{price = (double)value;}
+        set{price = (decimal)value;}
     }
     public int? Id{get; set; } = 0;
     private int quantity;
@@ -27,7 +27,7 @@ public class Item
     }
     public override string ToString()
     {
-        return $"ID: {Id}, Name: {Name}, Description: {Description}, Price: ${Price:F2}, Quantity: {Quantity}";
+        return $"ID: {Id}, Name: {Name}, Description: {Description}, Price: {Price:C}, Quantity: {Quantity}";
     }
 
     public Item(){

@@ -5,7 +5,12 @@ namespace Amz.Library;
 public class InventoryServiceProxy
 {
     private InventoryServiceProxy(){ 
-        items = new List<Item>();
+        //Remove sample data
+        items = new List<Item>{
+            new Item{Id = 1, Name = "Item 1", Price = 4.50M },
+            new Item{Id = 2, Name = "Item 2", Price = 10M },
+            new Item{Id = 3, Name = "Item 3", Price = 123.55M }
+        };
     }
     private static InventoryServiceProxy? instance;
     private static object instanceLock = new object();
