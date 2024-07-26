@@ -19,6 +19,10 @@
         Title="Store"
         ContentTemplate= "{DataTemplate views:StoreView }"
         Route="Store"/>
+    <ShellContent 
+        Title="Cart"
+        ContentTemplate= "{DataTemplate views:CartView}"
+        Route="Cart"/>
         
 
 

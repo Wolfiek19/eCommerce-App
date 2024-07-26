@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Amz.MAUI.Views.StoreView"
-             Title="StoreView">
+             x:Class="Amz.MAUI.Views.CartView"
+             Title="CartView">
     <VerticalStackLayout>
         <Grid>
             <Grid.RowDefinitions>
@@ -13,11 +13,6 @@
                 Text="Go Back"
                 Clicked="BackClicked"
                 />
-            <Button Grid.Row="2" 
-                Text="Cart"
-                Clicked="CartClicked"
-            />
-            
         </Grid>
     </VerticalStackLayout>
 </ContentPage>
