@@ -52,7 +52,7 @@ public class InventoryServiceProxy
         {
             return null;
         }
-        var isAdd = false;
+        bool isAdd = false; 
 
         if(item.Id == 0){
             item.Id = LastId + 1;
