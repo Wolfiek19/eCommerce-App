@@ -8,6 +8,6 @@ public partial class CartView : ContentPage
 	}
 
     private void BackClicked(object sender, EventArgs e){
-		Shell.Current.GoToAsync("//MainPage");
+		Shell.Current.GoToAsync("//Store");
 	}
 }
