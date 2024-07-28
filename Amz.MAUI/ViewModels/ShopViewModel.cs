@@ -4,7 +4,7 @@ using Amz.Library;
 
 namespace Amz.MAUI;
 
-public class InventoryViewModel : INotifyPropertyChanged
+public class ShopViewModel : INotifyPropertyChanged 
 {
     public List<ProductViewModel> Items { 
         get{ 
