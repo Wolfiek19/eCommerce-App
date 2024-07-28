@@ -15,5 +15,9 @@ public partial class StoreView : ContentPage
 	private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e){
 		(BindingContext as ShopViewModel).Refresh();
 	}
+
+	private void InventorySearchClicked(object sender, EventArgs e){
+		(BindingContext as ShopViewModel).Search(); //search feature is in SVM getter
+	}
 	
 }
