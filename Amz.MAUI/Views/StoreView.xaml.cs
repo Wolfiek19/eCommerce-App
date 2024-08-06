@@ -8,6 +8,10 @@ public partial class StoreView : ContentPage
 		BindingContext = new ShopViewModel();
 	}
 
+	private void AddToCartClicked(object sender, EventArgs e){
+		(BindingContext as ShopViewModel).PlaceInCart();
+	}
+
 	private void BackClicked(object sender, EventArgs e){
 		Shell.Current.GoToAsync("//MainPage");
 	}

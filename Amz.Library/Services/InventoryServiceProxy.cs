@@ -7,9 +7,9 @@ public class InventoryServiceProxy
     private InventoryServiceProxy(){ 
         //Remove sample data
         items = new List<Item>{
-            new Item{Id = 1, Name = "Item 1", Price = 4.50M },
-            new Item{Id = 2, Name = "Item 2", Price = 10M },
-            new Item{Id = 3, Name = "Item 3", Price = 123.55M }
+            new Item{Id = 1, Name = "Item 1", Price = 4.50M, Quantity = 1},
+            new Item{Id = 2, Name = "Item 2", Price = 10M, Quantity = 10 },
+            new Item{Id = 3, Name = "Item 3", Price = 123.55M, Quantity = 100 }
         };
     }
     private static InventoryServiceProxy? instance;

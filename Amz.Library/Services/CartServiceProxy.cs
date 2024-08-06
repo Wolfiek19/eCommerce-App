@@ -1,11 +1,30 @@
 ﻿using System.Collections.ObjectModel;
+using Microsoft.VisualBasic;
 
 namespace Amz.Library;
 
 public class CartServiceProxy
 {
+    
+    private List<Cart> carts;
+    public ReadOnlyCollection<Cart> Carts{
+        get{
+            return carts.AsReadOnly();
+        }
+    }
+    public Cart ShoppingCart{
+        get{
+            if(!carts.Any()){
+                
+                var newCart = new Cart();
+                carts.Add(newCart);
+                return newCart;
+            }
+            return carts.FirstOrDefault() ?? new Cart();      
+    }
+    }
     private CartServiceProxy(){
-        cartItems = new List<Item>();
+        carts = new List<Cart>();
     }
     private static CartServiceProxy? instance;
     private static object instanceLock = new object();
@@ -32,29 +51,39 @@ public class CartServiceProxy
     }
 
     //=============================functionality===============================
-    public void CartAdd(int id, int quantity){
-        if(cartItems == null){
-            return;
-        }
-        var item = InventoryServiceProxy.Current.FindById(id);
-        if(item == null){
-            Console.WriteLine("Item not found in inventory.");
-        }
-        if(item.Quantity < quantity){
-            Console.WriteLine("There is not enough items in inventory, please try again.");
-        }
-        var cartItem = new Item(item) {Quantity = quantity};
 
-        cartItems.Add(cartItem);
 
-        item.Quantity -= quantity;
+    public void CartAdd(Item newItem)
+{
+    if (ShoppingCart == null || ShoppingCart.CartItems == null)
+    {
+        return;
     }
+
+    var existingProduct = ShoppingCart.CartItems.FirstOrDefault(existingProduct => existingProduct.Id == newItem.Id);
+    var inventoryProduct = InventoryServiceProxy.Current.Items.FirstOrDefault(invProd => invProd.Id == newItem.Id);
+    if (inventoryProduct == null)
+    {
+        return;
+    }
+
+    inventoryProduct.Quantity -= newItem.Quantity;
+
+    if (existingProduct != null)
+    {
+        existingProduct.Quantity += newItem.Quantity;
+    }
+    else
+    {
+        ShoppingCart.CartItems.Add(newItem);
+    }
+}
 
     public void Delete(int id, int quantity){
         if(cartItems == null){
             return;
         }
-        var toRemove = cartItems.FirstOrDefault(c => c.Id == id);
+        var toRemove = CartItems.FirstOrDefault(c => c.Id == id);
         if(toRemove != null){
             if(toRemove.Quantity > quantity){
                 toRemove.Quantity -= quantity;
