@@ -35,10 +35,10 @@ public class Item
     }
 
     public Item(Item it){
-        this.Name = it.Name;
-        this.Description = it.Description;
-        this.Price = it.Price;
-        this.Id = it.Id;
-        this.Quantity = it.Quantity;
+        Name = it.Name;
+        Description = it.Description;
+        Price = it.Price;
+        Id = it.Id;
+        Quantity = it.Quantity;
     }
 }

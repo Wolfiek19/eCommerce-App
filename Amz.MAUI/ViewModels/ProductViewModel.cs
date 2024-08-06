@@ -54,4 +54,8 @@ public class ProductViewModel
         }
     }
 
+    public static implicit operator ProductViewModel(Item v)
+    {
+        throw new NotImplementedException();
+    }
 }
